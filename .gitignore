@@ -1,0 +1,12 @@
+.env
+static/img/
+pasta_templates_primeiro/
+ambiente_virtual/
+teste.py
+schema.sql
+schema_primeiro.sql
+schema_copy.sql
+dados_acesso_db4free.txt
+dicas_ambiente_virtual.txt
+requirements_primeiro.txt
+app_primeiro.py
