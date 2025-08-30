@@ -1,7 +1,7 @@
 .env
 static/img/
 pasta_templates_primeiro/
-projeto_cientifico/
+projeto_cientifico/index.html
 teste.py
 schema.sql
 schema_primeiro.sql

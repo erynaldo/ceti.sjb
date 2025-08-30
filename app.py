@@ -100,7 +100,7 @@ def load_user(user_id):
 
 
 # --------- Rotas Públicas ----------
-@app.route("/", methods=["GET","POST"])
+@app.route("/pagina_inicial", methods=["GET","POST"])
 def index():
     if request.method == "POST":
         tipo = request.form.get("tipo")
@@ -391,12 +391,13 @@ def load_user(user_id):
 
 
 
-@app.route("/login-aluno", methods=["GET","POST"])
+# @app.route("/login-aluno", methods=["GET","POST"])
+@app.route("/", methods=["GET","POST"])
 def login_aluno():
     if request.method == "POST":
         matricula_ra = request.form.get("matricula_ra") or ""
         if not matricula_ra:
-            return render_template("login-aluno.html", erro="RA está incorreto")
+            return render_template("index.html", erro="RA está incorreto")
 
         conn = get_conn()       
         cur = conn.cursor(cursor_factory=DictCursor)
@@ -407,14 +408,15 @@ def login_aluno():
         if not adm:
             cur.close(); conn.close()
             # aqui diz que o RA está invalido ou não existe
-            return render_template("login-aluno.html", erro="RA inválido ou não cadastrado na base")
+            return render_template("index.html", erro="RA inválido ou não cadastrado na base")
   
         
         # sucesso: faz login com Flask-Login e redireciona ao admin
         login_user(User(adm["id"], adm["nome_aluno"], adm["matricula_ra"]))
         return redirect(url_for("aluno"))
 
-    return render_template("login-aluno.html")
+    # return render_template("login-aluno.html")
+    return render_template("index.html")
 
 
 @app.route("/logout_aluno")
