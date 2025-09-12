@@ -369,12 +369,13 @@ def api_status_counts():
 
 # --------- User model p/ Flask-Login ----------
 class UserAluno(UserMixin):
-    def __init__(self, id_, nome_aluno, matricula_ra, gmail_aluno, usuario_github):
+    def __init__(self, id_, nome_aluno, matricula_ra, gmail_aluno, usuario_github, nota):
         self.id = id_
         self.nome_aluno = nome_aluno
         self.matricula_ra = matricula_ra
         self.gmail_aluno = gmail_aluno
         self.usuario_github = usuario_github
+        self.nota = nota  # Inicializa a nota como 0
 
 @login_manager_aluno.user_loader
 def load_user(user_id):
@@ -383,11 +384,11 @@ def load_user(user_id):
     cur = conn.cursor(cursor_factory=DictCursor)
     # cur = conn.cursor()
 
-    cur.execute("SELECT id, nome_aluno, matricula_ra, gmail_aluno, usuario_github FROM aluno WHERE id=%s", (user_id,))
+    cur.execute("SELECT id, nome_aluno, matricula_ra, gmail_aluno, usuario_github, nota FROM aluno WHERE id=%s", (user_id,))
     row = cur.fetchone()
     cur.close(); conn.close()
     if not row: return None
-    return UserAluno(row["id"], row["nome_aluno"], row["matricula_ra"], row["gmail_aluno"], row["usuario_github"])
+    return UserAluno(row["id"], row["nome_aluno"], row["matricula_ra"], row["gmail_aluno"], row["usuario_github"], row["nota"])
 
 
 
@@ -441,7 +442,7 @@ def aluno():
 
     # Página de dados
     cur.execute(
-        f"""SELECT id, nome_aluno, matricula_ra, gmail_aluno, usuario_github
+        f"""SELECT id, nome_aluno, matricula_ra, gmail_aluno, usuario_github, nota
             FROM aluno"""
     )
     dados_aluno = cur.fetchall()

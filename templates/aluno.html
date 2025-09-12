@@ -40,8 +40,9 @@
   <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8 mb-8">
     <div class="bg-white rounded shadow p-4">
       <p class="text-xl font-medium">Aluno(a):<span class="font-bold text-green-600 ml-2">{{ current_user.nome_aluno }}</span></p>
-      <p class="text-xl font-medium">Seu RA</p>
-      <p class="text-2sm font-medium text-red-600 tracking-widest">{{ current_user.matricula_ra }}</p>
+      <p class="text-xl font-medium">Seu RA: <span class="font-medium text-red-600 tracking-widest">{{ current_user.matricula_ra }}</span></p>
+      <p class="text-xl font-medium">Pontuação Maratona Tech: <span class="font-medium text-blue-600 tracking-widest">{{ current_user.nota }}</span></p>
+
     </div>
     <!-- <div class="bg-white rounded shadow p-4"> -->
     <div class="bg-white rounded shadow p-4">
