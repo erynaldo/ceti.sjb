@@ -39,9 +39,12 @@
   <!-- Cards -->
   <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8 mb-8">
     <div class="bg-white rounded shadow p-4">
-      <p class="text-xl font-medium">Aluno(a):<span class="font-bold text-green-600 ml-2">{{ current_user.nome_aluno }}</span></p>
-      <p class="text-xl font-medium">Seu RA: <span class="font-medium text-red-600 tracking-widest">{{ current_user.matricula_ra }}</span></p>
-      <p class="text-xl font-medium">Pontuação Maratona Tech: <span class="font-medium text-blue-600 tracking-widest">{{ current_user.nota }}</span></p>
+      <p class="text-xl font-medium">Aluno(a):<span class="font-bold text-green-600 ml-2">{{ current_user.nome_aluno
+          }}</span></p>
+      <p class="text-xl font-medium">Seu RA: <span class="font-medium text-red-600 tracking-widest">{{
+          current_user.matricula_ra }}</span></p>
+      <p class="text-xl font-medium">Pontuação Maratona Tech: <span class="font-medium text-blue-600 tracking-widest">{{
+          current_user.nota }}</span></p>
 
     </div>
     <!-- <div class="bg-white rounded shadow p-4"> -->
@@ -81,6 +84,103 @@
       <p class="mt-3"><a href="https://github.com/login" target="_blank"
           class="px-2 py-1 bg-orange-500 text-white text-xm rounded hover:text-black">Acessar Github</a></p>
     </div>
+
+
+    <div class="bg-white rounded shadow p-4 grid grid-cols-1">
+      <p class="text-xl font-medium mb-3">Atividade 01</p>
+      <p class="text-2sm font-medium">import java.util.Scanner;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.printf("Informe as 8 notas do aluno. Ao digitar cada nota, pressione a tecla ENTER.%n");
+        float nota1 = scanner.nextFloat();
+        float nota2 = scanner.nextFloat();
+        float nota3 = scanner.nextFloat();
+        float nota4 = scanner.nextFloat();
+        float nota5 = scanner.nextFloat();
+        float nota6 = scanner.nextFloat();
+        float nota7 = scanner.nextFloat();
+        float nota8 = scanner.nextFloat();
+        
+        // 1º Semestre
+        float mediaBim_1 = (nota1 + nota2)/2;
+        float mediaBim_2 = (nota3 + nota4)/2;
+        float mediaSemest_1 = (mediaBim_1 + mediaBim_2)/2;
+
+        // Imprime as médias
+        System.out.printf("%n 1º Bimestre: %.1f", mediaBim_1);
+        System.out.printf("%n 2º Bimestre: %.1f", mediaBim_2);
+        System.out.printf("%n 1º Semestre: %.1f%n", mediaSemest_1);
+        
+        System.out.println("----------------------------------");
+        
+        // 2º Semestre
+        float mediaBim_3 = (nota5 + nota6)/2;
+        float mediaBim_4 = (nota7 + nota8)/2;
+        float mediaSemest_2 = (mediaBim_3 + mediaBim_4)/2;
+        
+        // Imprime as médias
+        System.out.printf("%n 3º Bimestre: %.1f", mediaBim_3);
+        System.out.printf("%n 4º Bimestre: %.1f", mediaBim_4);
+        System.out.printf("%n 2º Semestre: %.1f%n", mediaSemest_2);
+        
+        System.out.println("----------------------------------");
+        
+        // Imprime a média final
+        float mediaFinal = (mediaSemest_1 + mediaSemest_2)/2;
+        System.out.printf("%n Média Final: %.1f", mediaFinal);
+
+        scanner.close();
+
+	}
+}
+        <br><button type="button" onclick="copiarSenhaGmail('senha-gmail')"
+          class="ml-2 px-2 py-1 bg-blue-500 text-white rounded text-xs hover:bg-blue-600">
+          Copiar
+        </button>
+      </p>
+    </div>
+
+    <div class="bg-white rounded shadow p-4 grid grid-cols-1">
+      <p class="text-xl font-medium mb-3">Atividade 02</p>
+      <p class="text-2sm font-medium">import java.util.Scanner;
+
+public class Main
+{
+	public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite a temperatura em graus Celsius (°C): ");
+        double tempCelsi = scanner.nextDouble();
+        
+        // Fahrenheit (°F) = (Celsius (°C) × 9/5) + 32 ou (Celsius (°C) × 1.8) + 32
+        double tempFahre = (tempCelsi * 1.8) + 32;
+        
+        // Kelvin (K) = Celsius (°C) + 273.15
+        double tempKelv = tempCelsi + 273.15;
+
+        // Imprime as temperaturas
+        System.out.printf("%n Temperatura em Celsius: %.1f °C", tempCelsi);
+        System.out.printf("%n Temperatura em Fahrenheit: %.1f °F", tempFahre);
+        System.out.printf("%n Temperatura em Kelvin: %.2f K%n", tempKelv);
+
+        scanner.close();
+
+	}
+}
+        <br><button type="button" onclick="copiarSenhaGmail('senha-gmail')"
+          class="ml-2 px-2 py-1 bg-blue-500 text-white rounded text-xs hover:bg-blue-600">
+          Copiar
+        </button>
+      </p>
+    </div>
+
+
   </div>
 
   <!-- Filtros -->
