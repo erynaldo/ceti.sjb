@@ -29,7 +29,7 @@
       <!-- <div class="bg-blue-300 rounded shadow pl-5 pr-5 p-2 mr-2">
         <span class="font-medium">Olá {{ current_user.nome }}</span>
       </div> -->
-      <div class="bg-red-500 rounded shadow pl-5 pr-5 p-2">
+      <div class="bg-red-500 rounded shadow pl-5 pr-5 p-2 hover:bg-red-400 text-black">
         <!-- <a href="{{ url_for('logout') }}" class="text-sm text-white hover:underline">Sair</a> -->
         <a href="{{ url_for('logout_aluno') }}" class="text-sm text-white">Sair</a>
       </div>
@@ -43,8 +43,12 @@
           }}</span></p>
       <p class="text-xl font-medium">Seu RA: <span class="font-medium text-red-600 tracking-widest">{{
           current_user.matricula_ra }}</span></p>
-      <p class="text-xl font-medium">Pontuação Maratona Tech: <span class="font-medium text-blue-600 tracking-widest">{{
-          current_user.nota }}</span></p>
+      <br>
+      <div class="px-2 py-1 bg-emerald-200 text-black text-xm rounded">
+        <p class="text-[18px] font-medium">Notas de Pensamento Computacional:</p>
+        <p><span class="text-[17px] font-medium text-blue-700">{{
+            current_user.nota }}</span></p>
+      </div>
 
     </div>
     <!-- <div class="bg-white rounded shadow p-4"> -->
@@ -85,26 +89,46 @@
           class="px-2 py-1 bg-orange-500 text-white text-xm rounded hover:text-black">Acessar Github</a></p>
     </div>
 
+    <!-- <div class="bg-white rounded shadow p-4 grid grid-cols-1">
+      <p class="text-xl font-medium mb-3">Clique no link abaixo</p>
+      <p class="text-2sm font-medium"><a
+          href="https://mega.nz/file/N14jwQbR#MfWpeaf0AIbRHyEH--YREbF9KjsVeTAsNYNIjXlo1cY" target="_blank"
+          class="text-blue-600 hover:underline">1º Trimestre: Revisão 1</a></p>
+    </div>
+
     <div class="bg-white rounded shadow p-4 grid grid-cols-1">
       <p class="text-xl font-medium mb-3">Clique no link abaixo</p>
-      <p class="text-2sm font-medium"><a href="https://mega.nz/file/N14jwQbR#MfWpeaf0AIbRHyEH--YREbF9KjsVeTAsNYNIjXlo1cY" target="_blank" class="text-blue-600 hover:underline">1º Trimestre: Revisão 1</a></p>
+      <p class="text-2sm font-medium"><a
+          href="https://mega.nz/file/dhAh3BJB#0pi2kbBwEONTq1jwWlK6osJcHsG2djDftksQf_T5P_0" target="_blank"
+          class="text-blue-600 hover:underline">2º Trimestre: Revisão 1</a></p>
     </div>
 
-     <div class="bg-white rounded shadow p-4 grid grid-cols-1">
+    <div class="bg-white rounded shadow p-4 grid grid-cols-1">
       <p class="text-xl font-medium mb-3">Clique no link abaixo</p>
-      <p class="text-2sm font-medium"><a href="https://mega.nz/file/dhAh3BJB#0pi2kbBwEONTq1jwWlK6osJcHsG2djDftksQf_T5P_0" target="_blank" class="text-blue-600 hover:underline">2º Trimestre: Revisão 1</a></p>
+      <p class="text-2sm font-medium"><a
+          href="https://mega.nz/file/Apgh2a4I#3vblQE8YEVvsofmel65CgJesNzNaH_77pvvDmy2Xd_w" target="_blank"
+          class="text-blue-600 hover:underline">2º Trimestre: Revisão 2</a></p>
+    </div> -->
+
+    <div class="bg-white rounded shadow mt-4 p-4 grid grid-cols-1">
+      <p class="text-xl font-medium mb-3 bg-yellow-300">Clique no link abaixo ter acesso ao código html</p>
+      <p class="text-2sm font-medium"><a
+          href="https://github.com/erynaldo/atividades/blob/main/codigo.html" target="_blank"
+          class="text-blue-600 hover:underline">Código html</a></p>
     </div>
 
-     <div class="bg-white rounded shadow p-4 grid grid-cols-1">
-      <p class="text-xl font-medium mb-3">Clique no link abaixo</p>
-      <p class="text-2sm font-medium"><a href="https://mega.nz/file/Apgh2a4I#3vblQE8YEVvsofmel65CgJesNzNaH_77pvvDmy2Xd_w" target="_blank" class="text-blue-600 hover:underline">2º Trimestre: Revisão 2</a></p>
+        <div class="bg-white rounded shadow mt-4 p-4 grid grid-cols-1">
+      <p class="text-xl font-medium mb-3 bg-yellow-300">Clique no link abaixo ter acesso ao código css</p>
+      <p class="text-2sm font-medium"><a
+          href="https://github.com/erynaldo/atividades/blob/main/codigo.css" target="_blank"
+          class="text-blue-600 hover:underline">Código css</a></p>
     </div>
 
   </div>
 
   <!-- Filtros -->
   <div class="bg-emerald-200 p-4 rounded shadow mt-14 grid grid-cols-1">
-    <p class="text-2sm font-medium">Par facilitar, é só copiar e depois colar no campo desejado</p>
+    <p class="text-2sm font-medium">Para facilitar, é só copiar e depois colar no campo desejado</p>
   </div>
   <h3 class="text-center text-gray-600 mt-8">Copyright © 2025 Desenvolvido por Erinaldo. Todos os direitos reservados
   </h3>
@@ -148,7 +172,7 @@
       const texto = document.getElementById(spanId).textContent;
       navigator.clipboard.writeText(texto)
         .then(() => {
-          alert('Texto copiado para a área de transferência!');
+          // alert('Texto copiado para a área de transferência!');
         })
         .catch(() => {
           alert('Erro ao copiar o texto.');
@@ -159,7 +183,7 @@
       const texto = document.getElementById(spanId).textContent;
       navigator.clipboard.writeText(texto)
         .then(() => {
-          alert('Texto copiado para a área de transferência!');
+          // alert('Texto copiado para a área de transferência!');
         })
         .catch(() => {
           alert('Erro ao copiar o texto.');
@@ -172,7 +196,7 @@
       const texto = document.getElementById(spanId).textContent;
       navigator.clipboard.writeText(texto)
         .then(() => {
-          alert('Texto copiado para a área de transferência!');
+          // alert('Texto copiado para a área de transferência!');
         })
         .catch(() => {
           alert('Erro ao copiar o texto.');
@@ -183,7 +207,7 @@
       const texto = document.getElementById(spanId).textContent;
       navigator.clipboard.writeText(texto)
         .then(() => {
-          alert('Texto copiado para a área de transferência!');
+          // alert('Texto copiado para a área de transferência!');
         })
         .catch(() => {
           alert('Erro ao copiar o texto.');
